@@ -12,10 +12,10 @@
   body {
     @apply bg-dark-950 text-white font-inter antialiased;
     background: 
-      radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(34, 211, 238, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
-      linear-gradient(135deg, #000000 0%, #050507 50%, #0a0a0f 100%);
+      radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+      linear-gradient(135deg, #0a0812 0%, #0f0d1a 50%, #1e1b2e 100%);
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
@@ -29,13 +29,13 @@
     width: 100%;
     height: 100%;
     background: 
-      linear-gradient(rgba(99, 102, 241, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(99, 102, 241, 0.02) 1px, transparent 1px);
-    background-size: 100px 100px;
-    opacity: 0.5;
+      linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.6;
     pointer-events: none;
     z-index: 1;
-    animation: data-flow 30s linear infinite;
+    animation: data-flow 25s linear infinite;
   }
   
   html {
@@ -49,54 +49,65 @@
   }
   
   .glass-dark {
-    @apply bg-black/30 backdrop-blur-2xl border border-white/10;
+    @apply bg-black/40 backdrop-blur-2xl border border-purple-500/20;
+    box-shadow: 
+      0 0 40px rgba(139, 92, 246, 0.1),
+      inset 0 0 40px rgba(139, 92, 246, 0.05);
   }
   
   .glass-ultra {
-    @apply bg-black/50 backdrop-blur-3xl border border-primary-500/20;
+    @apply bg-black/60 backdrop-blur-3xl border border-purple-500/30;
     box-shadow: 
-      0 0 40px rgba(99, 102, 241, 0.1),
-      inset 0 0 40px rgba(99, 102, 241, 0.05);
+      0 0 60px rgba(139, 92, 246, 0.2),
+      inset 0 0 60px rgba(139, 92, 246, 0.1);
+  }
+  
+  .glass-gaming {
+    @apply bg-gradient-to-br from-purple-900/20 via-blue-900/15 to-green-900/10 backdrop-blur-3xl border border-purple-500/40;
+    box-shadow: 
+      0 0 80px rgba(139, 92, 246, 0.3),
+      inset 0 0 80px rgba(139, 92, 246, 0.15),
+      0 0 120px rgba(59, 130, 246, 0.2);
   }
   
   .neon-border {
-    @apply border border-primary-500/60;
+    @apply border border-purple-500/80;
     box-shadow: 
-      0 0 30px rgba(99, 102, 241, 0.4),
-      inset 0 0 30px rgba(99, 102, 241, 0.1);
+      0 0 40px rgba(139, 92, 246, 0.6),
+      inset 0 0 40px rgba(139, 92, 246, 0.2);
   }
   
   .cyber-border {
-    @apply border border-primary-400/80;
+    @apply border border-purple-400/90;
     box-shadow: 
-      0 0 40px rgba(99, 102, 241, 0.5),
-      inset 0 0 40px rgba(99, 102, 241, 0.1),
-      0 0 80px rgba(34, 211, 238, 0.3);
+      0 0 60px rgba(139, 92, 246, 0.7),
+      inset 0 0 60px rgba(139, 92, 246, 0.2),
+      0 0 100px rgba(59, 130, 246, 0.4);
   }
   
-  .premium-card {
-    @apply glass-ultra rounded-3xl p-8 shadow-premium hover:shadow-hologram transition-all duration-1000 relative overflow-hidden;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
+  .gaming-card {
+    @apply glass-gaming rounded-3xl p-8 shadow-gaming hover:shadow-hologram transition-all duration-1000 relative overflow-hidden;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.1) 50%, rgba(16, 185, 129, 0.05) 100%);
   }
   
-  .premium-card::before {
+  .gaming-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, transparent 30%, rgba(99, 102, 241, 0.2) 50%, transparent 70%);
-    animation: hologram 6s ease-in-out infinite;
+    background: linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.3) 50%, transparent 70%);
+    animation: scan 4s ease-in-out infinite;
     pointer-events: none;
   }
   
-  .cyber-card {
+  .ultra-card {
     @apply glass-ultra rounded-3xl p-8 cyber-border relative overflow-hidden;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(34, 211, 238, 0.08) 50%, rgba(251, 191, 36, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.15) 25%, rgba(59, 130, 246, 0.1) 50%, rgba(16, 185, 129, 0.08) 75%, rgba(245, 158, 11, 0.05) 100%);
   }
   
-  .cyber-card::after {
+  .ultra-card::after {
     content: '';
     position: absolute;
     top: 0;
@@ -104,32 +115,32 @@
     right: 0;
     bottom: 0;
     background: 
-      linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.3;
+      linear-gradient(rgba(139, 92, 246, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.4;
     pointer-events: none;
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-secondary-400 via-primary-400 to-accent-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent;
     background-size: 200% 200%;
+    animation: gradient-x 3s ease-in-out infinite;
+  }
+  
+  .gradient-text-gaming {
+    @apply bg-gradient-to-r from-purple-400 via-pink-400 via-blue-400 via-green-400 to-yellow-400 bg-clip-text text-transparent;
+    background-size: 400% 400%;
     animation: gradient-x 4s ease-in-out infinite;
   }
   
-  .gradient-text-rainbow {
-    @apply bg-gradient-to-r from-neon-pink via-neon-purple via-neon-blue via-neon-cyan via-neon-green to-neon-yellow bg-clip-text text-transparent;
-    background-size: 400% 400%;
-    animation: gradient-x 5s ease-in-out infinite;
-  }
-  
-  .gradient-text-plasma {
-    background: linear-gradient(45deg, #ff0080, #ff8000, #ffff00, #80ff00, #00ff80, #00ffff, #0080ff, #8000ff);
-    background-size: 800% 800%;
+  .gradient-text-ultra {
+    background: linear-gradient(45deg, #8b5cf6, #ec4899, #3b82f6, #10b981, #f59e0b, #ef4444);
+    background-size: 600% 600%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: plasma 4s ease-in-out infinite;
+    animation: plasma 5s ease-in-out infinite;
   }
   
   .neon-text {
@@ -148,8 +159,7 @@
       0 0 20px currentColor,
       0 0 30px currentColor,
       0 0 40px currentColor,
-      0 0 50px currentColor,
-      0 0 60px currentColor;
+      0 0 50px currentColor;
   }
   
   .neon-text-ultra {
@@ -163,104 +173,79 @@
       0 0 90px currentColor;
   }
   
-  .cyber-button {
-    @apply relative overflow-hidden bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 hover:from-primary-500 hover:via-primary-400 hover:to-primary-300 text-white font-orbitron font-bold px-10 py-5 rounded-2xl transition-all duration-700 transform hover:scale-110 active:scale-95;
+  .gaming-button {
+    @apply relative overflow-hidden bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400 hover:from-purple-500 hover:via-purple-400 hover:to-purple-300 text-white font-orbitron font-bold px-12 py-6 rounded-2xl transition-all duration-700 transform hover:scale-110 active:scale-95;
     box-shadow: 
-      0 0 40px rgba(99, 102, 241, 0.6),
-      inset 0 0 40px rgba(255, 255, 255, 0.1),
-      0 0 80px rgba(99, 102, 241, 0.4);
+      0 0 60px rgba(139, 92, 246, 0.8),
+      inset 0 0 60px rgba(255, 255, 255, 0.1),
+      0 0 100px rgba(139, 92, 246, 0.6);
   }
   
-  .cyber-button::before {
+  .gaming-button::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-1500;
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-1500;
   }
   
-  .cyber-button:hover::before {
+  .gaming-button:hover::before {
     @apply translate-x-full;
   }
   
-  .cyber-button::after {
+  .gaming-button::after {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-primary-400/30 via-accent-400/30 to-secondary-400/30 animate-gradient-x blur-2xl;
+    @apply absolute inset-0 bg-gradient-to-r from-purple-400/40 via-pink-400/40 to-blue-400/40 animate-gradient-x blur-3xl;
   }
   
-  .neon-button {
-    @apply relative overflow-hidden font-orbitron font-black px-12 py-6 rounded-2xl transition-all duration-700 transform hover:scale-115 active:scale-95;
-    background: linear-gradient(45deg, #ff0080, #ff8000, #ffff00, #80ff00, #00ff80, #00ffff, #0080ff, #8000ff);
-    background-size: 400% 400%;
+  .ultra-button {
+    @apply relative overflow-hidden font-orbitron font-black px-16 py-8 rounded-2xl transition-all duration-700 transform hover:scale-115 active:scale-95;
+    background: linear-gradient(45deg, #8b5cf6, #ec4899, #3b82f6, #10b981, #f59e0b, #ef4444);
+    background-size: 600% 600%;
     animation: plasma 4s ease infinite;
     box-shadow: 
-      0 0 60px rgba(255, 0, 128, 0.8),
-      0 0 120px rgba(0, 255, 255, 0.6),
-      0 0 180px rgba(255, 255, 0, 0.4);
+      0 0 80px rgba(139, 92, 246, 0.9),
+      0 0 160px rgba(236, 72, 153, 0.7),
+      0 0 240px rgba(59, 130, 246, 0.5);
   }
   
-  .neon-button::before {
+  .ultra-button::before {
     content: '';
     @apply absolute inset-[3px] bg-dark-950 rounded-2xl;
   }
   
-  .neon-button span {
-    @apply relative z-10 gradient-text-plasma neon-text-ultra;
-  }
-  
-  .plasma-button {
-    @apply relative overflow-hidden font-orbitron font-black px-12 py-6 rounded-2xl transition-all duration-700 transform hover:scale-115 active:scale-95;
-    background: linear-gradient(45deg, #ff0080, #0080ff, #00ff80, #ffff00, #ff0080);
-    background-size: 300% 300%;
-    animation: rainbow 3s linear infinite;
-    box-shadow: 
-      0 0 40px rgba(255, 0, 128, 0.6),
-      0 0 80px rgba(0, 128, 255, 0.4),
-      0 0 120px rgba(0, 255, 128, 0.2);
-  }
-  
-  .plasma-button::before {
-    content: '';
-    @apply absolute inset-[2px] bg-dark-950 rounded-2xl;
-  }
-  
-  .plasma-button span {
-    @apply relative z-10 gradient-text-rainbow neon-text-intense;
+  .ultra-button span {
+    @apply relative z-10 gradient-text-ultra neon-text-ultra;
   }
   
   .floating-orb {
     @apply absolute rounded-full blur-3xl animate-float-slow;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.6) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, transparent 70%);
   }
   
-  .floating-orb-accent {
+  .floating-orb-gaming {
     @apply absolute rounded-full blur-3xl animate-float;
-    background: radial-gradient(circle, rgba(34, 211, 238, 0.5) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, transparent 70%);
   }
   
-  .floating-orb-secondary {
-    @apply absolute rounded-full blur-3xl animate-float-slow;
-    background: radial-gradient(circle, rgba(251, 191, 36, 0.5) 0%, transparent 70%);
-  }
-  
-  .floating-orb-plasma {
-    @apply absolute rounded-full blur-3xl animate-quantum;
-    background: radial-gradient(circle, rgba(255, 0, 128, 0.4) 0%, rgba(0, 255, 255, 0.2) 50%, transparent 70%);
+  .floating-orb-ultra {
+    @apply absolute rounded-full blur-3xl animate-breathe;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(16, 185, 129, 0.2) 50%, transparent 70%);
   }
   
   .data-stream {
-    @apply absolute inset-0 opacity-10;
+    @apply absolute inset-0 opacity-15;
     background-image: 
-      linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.3) 50%, transparent 100%),
+      linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.4) 50%, transparent 100%),
       repeating-linear-gradient(
         0deg,
         transparent,
         transparent 2px,
-        rgba(99, 102, 241, 0.1) 2px,
-        rgba(99, 102, 241, 0.1) 4px
+        rgba(139, 92, 246, 0.2) 2px,
+        rgba(139, 92, 246, 0.2) 4px
       );
-    animation: gradient-shift 10s linear infinite;
+    animation: gradient-shift 8s linear infinite;
   }
   
   .matrix-bg {
-    @apply absolute inset-0 overflow-hidden pointer-events-none opacity-20;
+    @apply absolute inset-0 overflow-hidden pointer-events-none opacity-25;
   }
   
   .hologram-effect {
@@ -269,8 +254,8 @@
   
   .hologram-effect::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-primary-400/30 to-transparent;
-    animation: hologram 4s ease-in-out infinite;
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/40 to-transparent;
+    animation: hologram 3s ease-in-out infinite;
     pointer-events: none;
   }
   
@@ -281,10 +266,10 @@
   .energy-border::before {
     content: '';
     @apply absolute inset-0 rounded-2xl;
-    background: linear-gradient(45deg, #ff0080, #ff8000, #ffff00, #80ff00, #00ff80, #00ffff, #0080ff, #8000ff);
-    background-size: 400% 400%;
-    animation: plasma 4s ease infinite;
-    padding: 3px;
+    background: linear-gradient(45deg, #8b5cf6, #ec4899, #3b82f6, #10b981, #f59e0b, #ef4444);
+    background-size: 600% 600%;
+    animation: plasma 3s ease infinite;
+    padding: 2px;
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
   }
@@ -305,6 +290,29 @@
   
   .kick-glow:hover {
     box-shadow: 0 0 40px rgba(0, 255, 65, 0.8), 0 0 80px rgba(0, 255, 65, 0.6);
+  }
+  
+  .gaming-nav {
+    @apply backdrop-blur-3xl border border-purple-500/30;
+    background: linear-gradient(135deg, rgba(10, 8, 18, 0.8) 0%, rgba(15, 13, 26, 0.9) 50%, rgba(30, 27, 46, 0.8) 100%);
+    box-shadow: 
+      0 0 60px rgba(139, 92, 246, 0.2),
+      inset 0 0 60px rgba(139, 92, 246, 0.1);
+  }
+  
+  .gaming-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.3;
+    pointer-events: none;
   }
 }
 
@@ -356,59 +364,59 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-primary-600 to-primary-400 rounded-full;
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  @apply bg-gradient-to-b from-purple-600 to-purple-400 rounded-full;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gradient-to-b from-primary-500 to-primary-300;
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+  @apply bg-gradient-to-b from-purple-500 to-purple-300;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
 }
 
 /* Selection */
 ::selection {
-  @apply bg-primary-500/50 text-white;
+  @apply bg-purple-500/50 text-white;
 }
 
-/* Particle system */
+/* Gaming particles */
 .particle {
   position: absolute;
-  width: 3px;
-  height: 3px;
-  background: linear-gradient(45deg, #ff0080, #0080ff);
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(45deg, #8b5cf6, #ec4899);
   border-radius: 50%;
-  animation: float 8s ease-in-out infinite;
-  box-shadow: 0 0 10px currentColor;
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 0 15px currentColor;
 }
 
 .particle:nth-child(odd) {
-  animation-delay: -3s;
-  background: linear-gradient(45deg, #00ff80, #ffff00);
+  animation-delay: -2s;
+  background: linear-gradient(45deg, #3b82f6, #10b981);
 }
 
 .particle:nth-child(3n) {
-  animation-delay: -6s;
-  background: linear-gradient(45deg, #8000ff, #ff8000);
+  animation-delay: -4s;
+  background: linear-gradient(45deg, #f59e0b, #ef4444);
 }
 
 /* Matrix rain effect */
 .matrix-rain {
   position: absolute;
-  width: 3px;
-  height: 30px;
-  background: linear-gradient(to bottom, transparent, #00ff80, transparent);
-  animation: matrix-rain 4s linear infinite;
-  box-shadow: 0 0 10px #00ff80;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, #8b5cf6, transparent);
+  animation: matrix-rain 3s linear infinite;
+  box-shadow: 0 0 15px #8b5cf6;
 }
 
-/* Cyber glitch effect */
-.cyber-glitch {
-  animation: cyber-glitch 3s ease-in-out infinite;
+/* Gaming glitch effect */
+.gaming-glitch {
+  animation: glitch 2s ease-in-out infinite;
 }
 
 /* Energy pulse effect */
 .energy-pulse {
-  animation: energy-pulse 3s ease-in-out infinite;
+  animation: energy-pulse 2s ease-in-out infinite;
 }
 
 /* Hologram scan lines */
@@ -417,40 +425,50 @@
     0deg,
     transparent,
     transparent 2px,
-    rgba(99, 102, 241, 0.2) 2px,
-    rgba(99, 102, 241, 0.2) 4px
+    rgba(139, 92, 246, 0.3) 2px,
+    rgba(139, 92, 246, 0.3) 4px
   );
-  animation: gradient-shift 3s linear infinite;
+  animation: gradient-shift 2s linear infinite;
 }
 
-/* Plasma effects */
-.plasma-bg {
-  background: linear-gradient(45deg, #ff0080, #ff8000, #ffff00, #80ff00, #00ff80, #00ffff, #0080ff, #8000ff);
-  background-size: 400% 400%;
-  animation: plasma 5s ease-in-out infinite;
+/* Gaming effects */
+.gaming-bg {
+  background: linear-gradient(45deg, #8b5cf6, #ec4899, #3b82f6, #10b981, #f59e0b, #ef4444);
+  background-size: 600% 600%;
+  animation: plasma 4s ease-in-out infinite;
 }
 
-/* Quantum effects */
-.quantum-effect {
-  animation: quantum 6s ease-in-out infinite;
+/* Morphing effects */
+.morph-effect {
+  animation: morph 6s ease-in-out infinite;
+}
+
+/* Breathing effects */
+.breathe-effect {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* Ripple effects */
+.ripple-effect {
+  animation: ripple 1.5s ease-out infinite;
 }
 
 /* Ultra premium effects */
 .ultra-glow {
   box-shadow: 
-    0 0 20px currentColor,
-    0 0 40px currentColor,
-    0 0 60px currentColor,
-    0 0 80px currentColor,
-    0 0 100px currentColor;
-}
-
-.mega-glow {
-  box-shadow: 
     0 0 30px currentColor,
     0 0 60px currentColor,
     0 0 90px currentColor,
     0 0 120px currentColor,
-    0 0 150px currentColor,
-    0 0 180px currentColor;
+    0 0 150px currentColor;
+}
+
+.mega-glow {
+  box-shadow: 
+    0 0 40px currentColor,
+    0 0 80px currentColor,
+    0 0 120px currentColor,
+    0 0 160px currentColor,
+    0 0 200px currentColor,
+    0 0 240px currentColor;
 }
