@@ -5,37 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
-  * {
-    @apply border-dark-700;
-  }
-  
   body {
     @apply bg-dark-950 text-white font-inter antialiased;
-    background: 
-      radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
-      linear-gradient(135deg, #0a0812 0%, #0f0d1a 50%, #1e1b2e 100%);
+    background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
     min-height: 100vh;
-    overflow-x: hidden;
-    position: relative;
-  }
-  
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-      linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    opacity: 0.6;
-    pointer-events: none;
-    z-index: 1;
-    animation: data-flow 25s linear infinite;
   }
   
   html {
@@ -49,287 +22,39 @@
   }
   
   .glass-dark {
-    @apply bg-black/40 backdrop-blur-2xl border border-purple-500/20;
-    box-shadow: 
-      0 0 40px rgba(139, 92, 246, 0.1),
-      inset 0 0 40px rgba(139, 92, 246, 0.05);
-  }
-  
-  .glass-ultra {
-    @apply bg-black/60 backdrop-blur-3xl border border-purple-500/30;
-    box-shadow: 
-      0 0 60px rgba(139, 92, 246, 0.2),
-      inset 0 0 60px rgba(139, 92, 246, 0.1);
-  }
-  
-  .glass-gaming {
-    @apply bg-gradient-to-br from-purple-900/20 via-blue-900/15 to-green-900/10 backdrop-blur-3xl border border-purple-500/40;
-    box-shadow: 
-      0 0 80px rgba(139, 92, 246, 0.3),
-      inset 0 0 80px rgba(139, 92, 246, 0.15),
-      0 0 120px rgba(59, 130, 246, 0.2);
-  }
-  
-  .neon-border {
-    @apply border border-purple-500/80;
-    box-shadow: 
-      0 0 40px rgba(139, 92, 246, 0.6),
-      inset 0 0 40px rgba(139, 92, 246, 0.2);
-  }
-  
-  .cyber-border {
-    @apply border border-purple-400/90;
-    box-shadow: 
-      0 0 60px rgba(139, 92, 246, 0.7),
-      inset 0 0 60px rgba(139, 92, 246, 0.2),
-      0 0 100px rgba(59, 130, 246, 0.4);
-  }
-  
-  .gaming-card {
-    @apply glass-gaming rounded-3xl p-8 shadow-gaming hover:shadow-hologram transition-all duration-1000 relative overflow-hidden;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(59, 130, 246, 0.1) 50%, rgba(16, 185, 129, 0.05) 100%);
-  }
-  
-  .gaming-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.3) 50%, transparent 70%);
-    animation: scan 4s ease-in-out infinite;
-    pointer-events: none;
-  }
-  
-  .ultra-card {
-    @apply glass-ultra rounded-3xl p-8 cyber-border relative overflow-hidden;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(236, 72, 153, 0.15) 25%, rgba(59, 130, 246, 0.1) 50%, rgba(16, 185, 129, 0.08) 75%, rgba(245, 158, 11, 0.05) 100%);
-  }
-  
-  .ultra-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      linear-gradient(rgba(139, 92, 246, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 92, 246, 0.08) 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.4;
-    pointer-events: none;
+    @apply bg-black/20 backdrop-blur-xl border border-white/10;
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent;
-    background-size: 200% 200%;
-    animation: gradient-x 3s ease-in-out infinite;
-  }
-  
-  .gradient-text-gaming {
-    @apply bg-gradient-to-r from-purple-400 via-pink-400 via-blue-400 via-green-400 to-yellow-400 bg-clip-text text-transparent;
-    background-size: 400% 400%;
-    animation: gradient-x 4s ease-in-out infinite;
-  }
-  
-  .gradient-text-ultra {
-    background: linear-gradient(45deg, #8b5cf6, #ec4899, #3b82f6, #10b981, #f59e0b, #ef4444);
-    background-size: 600% 600%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: plasma 5s ease-in-out infinite;
+    @apply bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent;
   }
   
   .neon-text {
-    @apply animate-neon-pulse;
-    text-shadow: 
-      0 0 5px currentColor,
-      0 0 10px currentColor,
-      0 0 15px currentColor,
-      0 0 20px currentColor;
-  }
-  
-  .neon-text-intense {
-    @apply animate-electric;
-    text-shadow: 
-      0 0 10px currentColor,
-      0 0 20px currentColor,
-      0 0 30px currentColor,
-      0 0 40px currentColor,
-      0 0 50px currentColor;
-  }
-  
-  .neon-text-ultra {
-    @apply animate-laser;
-    text-shadow: 
-      0 0 15px currentColor,
-      0 0 30px currentColor,
-      0 0 45px currentColor,
-      0 0 60px currentColor,
-      0 0 75px currentColor,
-      0 0 90px currentColor;
+    text-shadow: 0 0 10px currentColor;
   }
   
   .gaming-button {
-    @apply relative overflow-hidden bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400 hover:from-purple-500 hover:via-purple-400 hover:to-purple-300 text-white font-orbitron font-bold px-12 py-6 rounded-2xl transition-all duration-700 transform hover:scale-110 active:scale-95;
-    box-shadow: 
-      0 0 60px rgba(139, 92, 246, 0.8),
-      inset 0 0 60px rgba(255, 255, 255, 0.1),
-      0 0 100px rgba(139, 92, 246, 0.6);
+    @apply relative overflow-hidden bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white font-orbitron font-bold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105;
   }
   
   .gaming-button::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-1500;
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-700;
   }
   
   .gaming-button:hover::before {
     @apply translate-x-full;
   }
   
-  .gaming-button::after {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-purple-400/40 via-pink-400/40 to-blue-400/40 animate-gradient-x blur-3xl;
-  }
-  
-  .ultra-button {
-    @apply relative overflow-hidden font-orbitron font-black px-16 py-8 rounded-2xl transition-all duration-700 transform hover:scale-115 active:scale-95;
-    background: linear-gradient(45deg, #8b5cf6, #ec4899, #3b82f6, #10b981, #f59e0b, #ef4444);
-    background-size: 600% 600%;
-    animation: plasma 4s ease infinite;
-    box-shadow: 
-      0 0 80px rgba(139, 92, 246, 0.9),
-      0 0 160px rgba(236, 72, 153, 0.7),
-      0 0 240px rgba(59, 130, 246, 0.5);
-  }
-  
-  .ultra-button::before {
-    content: '';
-    @apply absolute inset-[3px] bg-dark-950 rounded-2xl;
-  }
-  
-  .ultra-button span {
-    @apply relative z-10 gradient-text-ultra neon-text-ultra;
-  }
-  
   .floating-orb {
-    @apply absolute rounded-full blur-3xl animate-float-slow;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.6) 0%, transparent 70%);
-  }
-  
-  .floating-orb-gaming {
     @apply absolute rounded-full blur-3xl animate-float;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, transparent 70%);
-  }
-  
-  .floating-orb-ultra {
-    @apply absolute rounded-full blur-3xl animate-breathe;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(16, 185, 129, 0.2) 50%, transparent 70%);
-  }
-  
-  .data-stream {
-    @apply absolute inset-0 opacity-15;
-    background-image: 
-      linear-gradient(90deg, transparent 0%, rgba(139, 92, 246, 0.4) 50%, transparent 100%),
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(139, 92, 246, 0.2) 2px,
-        rgba(139, 92, 246, 0.2) 4px
-      );
-    animation: gradient-shift 8s linear infinite;
-  }
-  
-  .matrix-bg {
-    @apply absolute inset-0 overflow-hidden pointer-events-none opacity-25;
-  }
-  
-  .hologram-effect {
-    @apply relative;
-  }
-  
-  .hologram-effect::before {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/40 to-transparent;
-    animation: hologram 3s ease-in-out infinite;
-    pointer-events: none;
-  }
-  
-  .energy-border {
-    @apply relative;
-  }
-  
-  .energy-border::before {
-    content: '';
-    @apply absolute inset-0 rounded-2xl;
-    background: linear-gradient(45deg, #8b5cf6, #ec4899, #3b82f6, #10b981, #f59e0b, #ef4444);
-    background-size: 600% 600%;
-    animation: plasma 3s ease infinite;
-    padding: 2px;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-  }
-  
-  .twitter-glow {
-    @apply hover:shadow-neon-lg;
-    color: #000000;
-  }
-  
-  .twitter-glow:hover {
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 80px rgba(0, 0, 0, 0.6);
-  }
-  
-  .kick-glow {
-    @apply hover:shadow-neon-lg;
-    color: #00ff41;
-  }
-  
-  .kick-glow:hover {
-    box-shadow: 0 0 40px rgba(0, 255, 65, 0.8), 0 0 80px rgba(0, 255, 65, 0.6);
-  }
-  
-  .gaming-nav {
-    @apply backdrop-blur-3xl border border-purple-500/30;
-    background: linear-gradient(135deg, rgba(10, 8, 18, 0.8) 0%, rgba(15, 13, 26, 0.9) 50%, rgba(30, 27, 46, 0.8) 100%);
-    box-shadow: 
-      0 0 60px rgba(139, 92, 246, 0.2),
-      inset 0 0 60px rgba(139, 92, 246, 0.1);
-  }
-  
-  .gaming-nav::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.3;
-    pointer-events: none;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
   }
 }
 
 @layer utilities {
   .text-shadow {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  .text-shadow-lg {
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-  }
-  
-  .text-shadow-neon {
-    text-shadow: 
-      0 0 10px currentColor,
-      0 0 20px currentColor,
-      0 0 30px currentColor;
   }
   
   .scrollbar-hide {
@@ -340,135 +65,26 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  
-  .transform-style-3d {
-    transform-style: preserve-3d;
-  }
-  
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-dark-950;
+  @apply bg-dark-900;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-purple-600 to-purple-400 rounded-full;
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  @apply bg-primary-600 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gradient-to-b from-purple-500 to-purple-300;
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
+  @apply bg-primary-500;
 }
 
 /* Selection */
 ::selection {
-  @apply bg-purple-500/50 text-white;
-}
-
-/* Gaming particles */
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: linear-gradient(45deg, #8b5cf6, #ec4899);
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-  box-shadow: 0 0 15px currentColor;
-}
-
-.particle:nth-child(odd) {
-  animation-delay: -2s;
-  background: linear-gradient(45deg, #3b82f6, #10b981);
-}
-
-.particle:nth-child(3n) {
-  animation-delay: -4s;
-  background: linear-gradient(45deg, #f59e0b, #ef4444);
-}
-
-/* Matrix rain effect */
-.matrix-rain {
-  position: absolute;
-  width: 2px;
-  height: 40px;
-  background: linear-gradient(to bottom, transparent, #8b5cf6, transparent);
-  animation: matrix-rain 3s linear infinite;
-  box-shadow: 0 0 15px #8b5cf6;
-}
-
-/* Gaming glitch effect */
-.gaming-glitch {
-  animation: glitch 2s ease-in-out infinite;
-}
-
-/* Energy pulse effect */
-.energy-pulse {
-  animation: energy-pulse 2s ease-in-out infinite;
-}
-
-/* Hologram scan lines */
-.hologram-lines {
-  background-image: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(139, 92, 246, 0.3) 2px,
-    rgba(139, 92, 246, 0.3) 4px
-  );
-  animation: gradient-shift 2s linear infinite;
-}
-
-/* Gaming effects */
-.gaming-bg {
-  background: linear-gradient(45deg, #8b5cf6, #ec4899, #3b82f6, #10b981, #f59e0b, #ef4444);
-  background-size: 600% 600%;
-  animation: plasma 4s ease-in-out infinite;
-}
-
-/* Morphing effects */
-.morph-effect {
-  animation: morph 6s ease-in-out infinite;
-}
-
-/* Breathing effects */
-.breathe-effect {
-  animation: breathe 3s ease-in-out infinite;
-}
-
-/* Ripple effects */
-.ripple-effect {
-  animation: ripple 1.5s ease-out infinite;
-}
-
-/* Ultra premium effects */
-.ultra-glow {
-  box-shadow: 
-    0 0 30px currentColor,
-    0 0 60px currentColor,
-    0 0 90px currentColor,
-    0 0 120px currentColor,
-    0 0 150px currentColor;
-}
-
-.mega-glow {
-  box-shadow: 
-    0 0 40px currentColor,
-    0 0 80px currentColor,
-    0 0 120px currentColor,
-    0 0 160px currentColor,
-    0 0 200px currentColor,
-    0 0 240px currentColor;
+  @apply bg-primary-500/50 text-white;
 }
