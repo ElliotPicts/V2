@@ -99,7 +99,7 @@ export function HubSection({ onSectionChange }: HubSectionProps) {
             <Card glow>
               <div className="text-center">
                 <div className="text-3xl mb-3">💰</div>
-                <div className="text-2xl font-orbitron font-bold text-secondary-400 mb-1">
+                <div className="text-2xl font-orbitron font-bold text-white mb-1">
                   $<AnimatedCounter value={stats.totalVolume} decimals={0} />
                 </div>
                 <div className="text-gray-400 font-inter text-sm">Total Volume This Month</div>
@@ -147,7 +147,7 @@ export function HubSection({ onSectionChange }: HubSectionProps) {
             <Card>
               <div className="text-center">
                 <div className="text-3xl mb-3">🔥</div>
-                <div className="text-2xl font-orbitron font-bold text-red-400 mb-1">
+                <div className="text-2xl font-orbitron font-bold text-white mb-1">
                   $<AnimatedCounter value={stats.biggestWin} decimals={0} />
                 </div>
                 <div className="text-gray-400 font-inter text-sm">Biggest Win</div>
@@ -186,7 +186,7 @@ export function HubSection({ onSectionChange }: HubSectionProps) {
                   1. Choose Platform
                 </h3>
                 <p className="text-gray-300 font-inter leading-relaxed">
-                  Pick from <span className="text-primary-400 font-medium">Rugs.fun</span>, <span className="text-accent-400 font-medium">Solpump</span>, <span className="text-secondary-400 font-medium">BCGame</span>, or <span className="text-purple-400 font-medium">Rain.gg</span> using our affiliate links.
+                  Pick from <span className="text-primary-400 font-medium">Rugs.fun</span>, <span className="text-accent-400 font-medium">Solpump</span>, <span className="text-white font-medium">BCGame</span>, or <span className="text-primary-300 font-medium">Rain.gg</span> using our affiliate links.
                 </p>
               </div>
             </Card>

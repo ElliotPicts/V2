@@ -42,7 +42,7 @@ function App() {
   };
   
   return (
-    <div className="min-h-screen bg-dark-950 text-white relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
       {/* Subtle Background Effects */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 opacity-30">
@@ -52,7 +52,7 @@ function App() {
         
         {/* Subtle grid overlay */}
         <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: 'linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)',
           backgroundSize: '50px 50px'
         }} />
       </div>
@@ -108,7 +108,7 @@ function App() {
                 href="https://www.youtube.com/@G0TZEMAXWIN"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-400 hover:text-red-400 transition-colors duration-200 text-lg font-inter font-medium"
+                className="flex items-center space-x-2 text-gray-400 hover:text-youtube transition-colors duration-200 text-lg font-inter font-medium"
               >
                 <span className="text-2xl">📺</span>
                 <span>@G0TZEMAXWIN</span>
@@ -117,7 +117,7 @@ function App() {
                 href="https://discord.gg/SFkyxGxKvG"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-lg font-inter font-medium"
+                className="flex items-center space-x-2 text-gray-400 hover:text-discord transition-colors duration-200 text-lg font-inter font-medium"
               >
                 <span className="text-2xl">💬</span>
                 <span>Discord</span>
@@ -126,7 +126,7 @@ function App() {
                 href="https://x.com/G0TZEWEB3"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-200 text-lg font-inter font-medium"
+                className="flex items-center space-x-2 text-gray-400 hover:text-twitter transition-colors duration-200 text-lg font-inter font-medium"
               >
                 <span className="text-2xl">🐦</span>
                 <span>@G0TZEWEB3</span>

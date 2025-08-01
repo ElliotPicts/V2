@@ -6,8 +6,8 @@
 
 @layer base {
   body {
-    @apply bg-dark-950 text-white font-inter antialiased;
-    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+    @apply bg-black text-white font-inter antialiased;
+    background: linear-gradient(135deg, #000000 0%, #0f172a 50%, #1e1b4b 100%);
     min-height: 100vh;
   }
   
@@ -22,11 +22,11 @@
   }
   
   .glass-dark {
-    @apply bg-black/30 backdrop-blur-xl border border-white/10;
+    @apply bg-black/40 backdrop-blur-xl border border-white/10;
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-400 via-white to-accent-400 bg-clip-text text-transparent;
   }
   
   .neon-text {
@@ -35,7 +35,7 @@
   
   .floating-orb {
     @apply absolute rounded-full blur-3xl animate-float;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
   }
 }
 

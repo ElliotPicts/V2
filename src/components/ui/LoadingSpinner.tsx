@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export function LoadingSpinner() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-dark-950 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden">
       {/* Subtle background */}
       <div className="absolute inset-0">
         <div className="floating-orb w-96 h-96 top-1/4 left-1/4" />
