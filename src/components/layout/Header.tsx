@@ -23,21 +23,21 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
     <motion.header 
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="fixed top-0 left-0 right-0 z-50"
+      transition={{ duration: 0.5 }}
+      className="fixed top-0 left-0 right-0 z-50 bg-dark-950/80 backdrop-blur-xl border-b border-white/10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-between h-20 rounded-b-2xl backdrop-blur-xl bg-black/20 border-b border-white/10">
+        <div className="relative flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex items-center space-x-4 cursor-pointer"
+            transition={{ delay: 0.1 }}
+            className="flex items-center space-x-3 cursor-pointer"
             onClick={() => onSectionChange('hub')}
           >
-            <div className="text-3xl">⚡</div>
-            <div className="font-orbitron font-black text-2xl gradient-text">
+            <div className="text-2xl">⚡</div>
+            <div className="font-orbitron font-bold text-xl gradient-text">
               G0TZE AFFILIATES
             </div>
           </motion.div>
@@ -49,36 +49,36 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
                 key={section.id}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
+                transition={{ delay: 0.2 + index * 0.05 }}
                 onClick={() => onSectionChange(section.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-orbitron font-semibold transition-all duration-300 ${
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-inter font-medium transition-all duration-200 ${
                   currentSection === section.id
-                    ? 'bg-primary-600 text-white shadow-neon'
+                    ? 'bg-primary-600 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
                 }`}
               >
-                <span className="text-lg">{section.icon}</span>
+                <span>{section.icon}</span>
                 <span>{section.label}</span>
               </motion.button>
             ))}
           </nav>
           
           {/* Social Links */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-2">
             <Button
               variant="twitter"
-              size="md"
+              size="sm"
               onClick={() => window.open('https://x.com/G0TZEWEB3', '_blank')}
             >
-              <span className="text-xl">🐦</span>
+              <span>🐦</span>
               <span>X</span>
             </Button>
             <Button
               variant="kick"
-              size="md"
+              size="sm"
               onClick={() => window.open('https://kick.com/G0TZEWIN', '_blank')}
             >
-              <span className="text-xl">🎥</span>
+              <span>🎥</span>
               <span>KICK</span>
             </Button>
           </div>
@@ -104,9 +104,9 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden backdrop-blur-xl bg-black/20 border border-white/10 rounded-b-2xl mt-2"
+            className="md:hidden bg-dark-900/90 backdrop-blur-xl border border-white/10 rounded-b-lg mt-2"
           >
-            <div className="flex flex-col space-y-2 p-4">
+            <div className="flex flex-col space-y-1 p-4">
               {sections.map((section) => (
                 <button
                   key={section.id}
@@ -114,13 +114,13 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
                     onSectionChange(section.id);
                     setMobileMenuOpen(false);
                   }}
-                  className={`flex items-center space-x-3 px-4 py-3 rounded-xl font-orbitron font-semibold transition-all duration-300 ${
+                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-inter font-medium transition-all duration-200 ${
                     currentSection === section.id
                       ? 'bg-primary-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-white/10'
                   }`}
                 >
-                  <span className="text-lg">{section.icon}</span>
+                  <span>{section.icon}</span>
                   <span>{section.label}</span>
                 </button>
               ))}

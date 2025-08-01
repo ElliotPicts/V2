@@ -13,139 +13,74 @@ export function HubSection({ onSectionChange }: HubSectionProps) {
   const stats = getStatistics();
   
   return (
-    <div className="min-h-screen pt-32 pb-20 relative overflow-hidden">
-      {/* Ultra Premium Background Effects */}
+    <div className="min-h-screen pt-20 pb-16 relative overflow-hidden">
+      {/* Subtle Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Massive floating orbs */}
-        <div className="floating-orb w-[800px] h-[800px] top-1/4 left-1/4 bg-primary-500/20" />
-        <div className="floating-orb-accent w-[700px] h-[700px] bottom-1/4 right-1/4 bg-accent-500/15" style={{ animationDelay: '3s' }} />
-        <div className="floating-orb-secondary w-[600px] h-[600px] top-1/2 right-1/3 bg-secondary-500/12" style={{ animationDelay: '6s' }} />
-        <div className="floating-orb-plasma w-[500px] h-[500px] bottom-1/3 left-1/2 bg-neon-pink/10" style={{ animationDelay: '9s' }} />
-        
-        {/* Ultra Matrix rain effect */}
-        <div className="absolute inset-0 opacity-30">
-          {Array.from({ length: 50 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-px h-32 bg-gradient-to-b from-primary-500 via-accent-500 to-transparent matrix-rain"
-              style={{
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${4 + Math.random() * 3}s`
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Ultra Cyber particles */}
-        {Array.from({ length: 150 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              backgroundColor: ['#ff0080', '#0080ff', '#00ff80', '#ffff00', '#ff8000', '#8000ff'][Math.floor(Math.random() * 6)]
-            }}
-            animate={{
-              y: [0, -50, 0],
-              opacity: [0.3, 1, 0.3],
-              scale: [1, 3, 1],
-              rotateZ: [0, 360, 0],
-            }}
-            transition={{
-              duration: 6 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 4,
-            }}
-          />
-        ))}
+        <div className="floating-orb w-96 h-96 top-1/4 left-1/4" />
+        <div className="floating-orb w-80 h-80 bottom-1/4 right-1/4" style={{ animationDelay: '3s' }} />
       </div>
       
-      {/* Hero Section Ultra Premium */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      {/* Hero Section */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           <motion.div
-            initial={{ opacity: 0, y: 150, scale: 0.7 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
           >
-            {/* Main Title Ultra Premium */}
-            <motion.h1 
-              className="text-8xl md:text-[12rem] font-orbitron font-black mb-12 leading-tight perspective-1000"
-              style={{ transformStyle: 'preserve-3d' }}
-            >
-              <motion.span 
-                className="gradient-text-plasma neon-text-ultra block mb-8 animate-quantum"
-                animate={{ 
-                  rotateX: [0, 10, 0], 
-                  rotateY: [0, -5, 0],
-                  scale: [1, 1.05, 1]
-                }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              >
+            {/* Main Title */}
+            <h1 className="text-5xl md:text-7xl font-orbitron font-black mb-6 leading-tight">
+              <span className="gradient-text block mb-2">
                 $3,000
-              </motion.span>
-              <motion.span 
-                className="text-white text-5xl md:text-7xl block neon-text-intense"
-                animate={{ 
-                  rotateX: [0, -5, 0],
-                  scale: [1, 1.02, 1]
-                }}
-                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-              >
-                distributed every month 💸
-              </motion.span>
-            </motion.h1>
+              </span>
+              <span className="text-white text-3xl md:text-5xl block">
+                distributed every month
+              </span>
+            </h1>
             
-            {/* Subtitle Ultra Premium */}
+            {/* Subtitle */}
             <motion.p 
-              className="text-4xl md:text-5xl text-gray-300 max-w-6xl mx-auto mb-8 font-inter font-light"
-              initial={{ opacity: 0, y: 50 }}
+              className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 font-inter"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Join G0TZE's gang of <span className="gradient-text-plasma font-black neon-text-intense">elite gamblers</span>
+              Join G0TZE's gang of <span className="gradient-text font-semibold">elite gamblers</span>
             </motion.p>
             <motion.p 
-              className="text-2xl md:text-3xl text-gray-400 max-w-5xl mx-auto mb-20 font-inter"
-              initial={{ opacity: 0, y: 50 }}
+              className="text-lg text-gray-400 max-w-2xl mx-auto mb-10 font-inter"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
             >
               Compete for real cash rewards on premium Web3 casino platforms
             </motion.p>
             
-            {/* CTA Buttons Ultra Premium */}
+            {/* CTA Buttons */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-10 justify-center items-center mb-24"
-              initial={{ opacity: 0, y: 80 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
             >
               <Button
-                size="mega"
-                variant="plasma"
+                size="xl"
+                variant="primary"
                 glow
-                cyber
-                intense
-                ultra
                 onClick={() => onSectionChange('platforms')}
-                className="text-3xl px-20 py-10 min-w-[400px] shadow-plasma mega-glow"
+                className="min-w-[280px]"
               >
-                <span className="text-4xl mr-6 animate-cyber-glitch">🚀</span>
+                <span className="text-xl mr-2">🚀</span>
                 START PLAYING NOW
               </Button>
               <Button
-                size="mega"
-                variant="cyber"
+                size="xl"
+                variant="outline"
                 onClick={() => onSectionChange('leaderboard')}
-                className="text-2xl px-16 py-8 min-w-[350px] shadow-cyber"
-                glow
-                intense
+                className="min-w-[240px]"
               >
-                <span className="text-3xl mr-4 animate-quantum">🏆</span>
+                <span className="text-xl mr-2">🏆</span>
                 VIEW LEADERBOARD
               </Button>
             </motion.div>
@@ -153,145 +88,141 @@ export function HubSection({ onSectionChange }: HubSectionProps) {
         </div>
       </div>
       
-      {/* Ultra Premium Stats Cards */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      {/* Stats Cards */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <motion.div
-            initial={{ opacity: 0, y: 80, rotateX: -30 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ delay: 0.4, duration: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
           >
-            <Card ultra glow cyber intense hologram plasma>
+            <Card glow>
               <div className="text-center">
-                <div className="text-8xl mb-8 animate-quantum">💰</div>
-                <div className="text-5xl font-orbitron font-black gradient-text-plasma neon-text-ultra mb-4">
+                <div className="text-3xl mb-3">💰</div>
+                <div className="text-2xl font-orbitron font-bold text-secondary-400 mb-1">
                   $<AnimatedCounter value={stats.totalVolume} decimals={0} />
                 </div>
-                <div className="text-gray-300 font-inter font-bold text-xl">Total Volume This Month</div>
-                <div className="mt-6 h-2 bg-gradient-to-r from-secondary-500 via-primary-500 to-accent-500 rounded-full animate-gradient-x shadow-neon-lg" />
+                <div className="text-gray-400 font-inter text-sm">Total Volume This Month</div>
               </div>
             </Card>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 80, rotateX: -30 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ delay: 0.5, duration: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <Card neon cyber hologram ultra>
+            <Card>
               <div className="text-center">
-                <div className="text-8xl mb-8 animate-cyber-glitch">👥</div>
-                <div className="text-5xl font-orbitron font-black text-primary-400 neon-text-ultra mb-4">
+                <div className="text-3xl mb-3">👥</div>
+                <div className="text-2xl font-orbitron font-bold text-primary-400 mb-1">
                   <AnimatedCounter value={stats.activeAffiliates} />
                 </div>
-                <div className="text-gray-300 font-inter font-bold text-xl">Active Affiliates</div>
-                <div className="mt-6 h-2 bg-gradient-to-r from-primary-500 to-primary-300 rounded-full animate-glow-pulse shadow-neon-lg" />
+                <div className="text-gray-400 font-inter text-sm">Active Players</div>
               </div>
             </Card>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 80, rotateX: -30 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ delay: 0.6, duration: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <Card premium intense ultra plasma>
+            <Card>
               <div className="text-center">
-                <div className="text-8xl mb-8 animate-rainbow">⏰</div>
-                <div className="text-5xl font-orbitron font-black text-accent-400 neon-text-intense mb-4">
+                <div className="text-3xl mb-3">⏰</div>
+                <div className="text-2xl font-orbitron font-bold text-accent-400 mb-1">
                   <AnimatedCounter value={stats.daysUntilReset} />
                 </div>
-                <div className="text-gray-300 font-inter font-bold text-xl">Days Until Reset</div>
-                <div className="mt-6 h-2 bg-gradient-to-r from-accent-500 to-accent-300 rounded-full animate-energy-pulse shadow-neon-lg" />
+                <div className="text-gray-400 font-inter text-sm">Days Until Reset</div>
               </div>
             </Card>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 80, rotateX: -30 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ delay: 0.7, duration: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <Card glow cyber ultra>
+            <Card>
               <div className="text-center">
-                <div className="text-8xl mb-8 animate-electric">🔥</div>
-                <div className="text-5xl font-orbitron font-black text-red-400 neon-text-ultra mb-4">
+                <div className="text-3xl mb-3">🔥</div>
+                <div className="text-2xl font-orbitron font-bold text-red-400 mb-1">
                   $<AnimatedCounter value={stats.biggestWin} decimals={0} />
                 </div>
-                <div className="text-gray-300 font-inter font-bold text-xl">Biggest Win</div>
-                <div className="mt-6 h-2 bg-gradient-to-r from-red-500 to-orange-500 rounded-full animate-neon-flicker shadow-neon-lg" />
+                <div className="text-gray-400 font-inter text-sm">Biggest Win</div>
               </div>
             </Card>
           </motion.div>
         </div>
       </div>
       
-      {/* How it Works - Ultra Premium */}
+      {/* How it Works */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 80 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 1 }}
-          className="text-center mb-24"
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-center mb-12"
         >
-          <h2 className="text-6xl md:text-8xl font-orbitron font-black gradient-text-plasma neon-text-ultra mb-12 animate-quantum">
+          <h2 className="text-3xl md:text-4xl font-orbitron font-bold gradient-text mb-4">
             How It Works
           </h2>
-          <p className="text-3xl md:text-4xl text-gray-300 max-w-6xl mx-auto font-inter font-light">
-            Simple. Play on our partner platforms and climb the leaderboard to win <span className="gradient-text-plasma font-black neon-text-intense text-4xl">real money</span>.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-inter">
+            Simple. Play on our partner platforms and climb the leaderboard to win <span className="gradient-text font-semibold">real money</span>.
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div
-            initial={{ opacity: 0, x: -80, rotateY: -30 }}
-            animate={{ opacity: 1, x: 0, rotateY: 0 }}
-            transition={{ delay: 0.9, duration: 1 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
           >
-            <Card ultra cyber hologram intense plasma>
+            <Card>
               <div className="text-center">
-                <div className="text-10xl mb-12 animate-quantum">🎯</div>
-                <h3 className="text-4xl font-orbitron font-black gradient-text-plasma neon-text-intense mb-8">
+                <div className="text-4xl mb-4">🎯</div>
+                <h3 className="text-xl font-orbitron font-bold gradient-text mb-3">
                   1. Choose Platform
                 </h3>
-                <p className="text-gray-300 font-inter text-2xl leading-relaxed">
-                  Pick from <span className="text-primary-400 font-black neon-text">Rugs.fun</span>, <span className="text-accent-400 font-black neon-text">Solpump</span>, <span className="text-secondary-400 font-black neon-text">BCGame</span>, or <span className="text-purple-400 font-black neon-text">Rain.gg</span> using our affiliate links.
+                <p className="text-gray-300 font-inter leading-relaxed">
+                  Pick from <span className="text-primary-400 font-medium">Rugs.fun</span>, <span className="text-accent-400 font-medium">Solpump</span>, <span className="text-secondary-400 font-medium">BCGame</span>, or <span className="text-purple-400 font-medium">Rain.gg</span> using our affiliate links.
                 </p>
               </div>
             </Card>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 80, rotateX: -30 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ delay: 1.0, duration: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
           >
-            <Card neon cyber intense ultra>
+            <Card>
               <div className="text-center">
-                <div className="text-10xl mb-12 animate-cyber-glitch">🎰</div>
-                <h3 className="text-4xl font-orbitron font-black text-primary-400 neon-text-ultra mb-8">
+                <div className="text-4xl mb-4">🎰</div>
+                <h3 className="text-xl font-orbitron font-bold text-primary-400 mb-3">
                   2. Start Playing
                 </h3>
-                <p className="text-gray-300 font-inter text-2xl leading-relaxed">
-                  Every dollar you wager is <span className="text-accent-400 font-black neon-text-intense">tracked automatically</span> and added to your monthly total in real-time.
+                <p className="text-gray-300 font-inter leading-relaxed">
+                  Every dollar you wager is <span className="text-accent-400 font-medium">tracked automatically</span> and added to your monthly total in real-time.
                 </p>
               </div>
             </Card>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, x: 80, rotateY: 30 }}
-            animate={{ opacity: 1, x: 0, rotateY: 0 }}
-            transition={{ delay: 1.1, duration: 1 }}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
           >
-            <Card premium glow hologram intense ultra plasma>
+            <Card>
               <div className="text-center">
-                <div className="text-10xl mb-12 animate-rainbow">💰</div>
-                <h3 className="text-4xl font-orbitron font-black gradient-text-plasma neon-text-ultra mb-8">
+                <div className="text-4xl mb-4">💰</div>
+                <h3 className="text-xl font-orbitron font-bold gradient-text mb-3">
                   3. Win Rewards
                 </h3>
-                <p className="text-gray-300 font-inter text-2xl leading-relaxed">
-                  Top 3 players each month split <span className="gradient-text-plasma font-black text-3xl neon-text-ultra">$3,000</span>. Reset monthly for fair competition.
+                <p className="text-gray-300 font-inter leading-relaxed">
+                  Top 3 players each month split <span className="gradient-text font-semibold text-lg">$3,000</span>. Reset monthly for fair competition.
                 </p>
               </div>
             </Card>

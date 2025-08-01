@@ -7,7 +7,7 @@
 @layer base {
   body {
     @apply bg-dark-950 text-white font-inter antialiased;
-    background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
     min-height: 100vh;
   }
   
@@ -22,7 +22,7 @@
   }
   
   .glass-dark {
-    @apply bg-black/20 backdrop-blur-xl border border-white/10;
+    @apply bg-black/30 backdrop-blur-xl border border-white/10;
   }
   
   .gradient-text {
@@ -33,22 +33,9 @@
     text-shadow: 0 0 10px currentColor;
   }
   
-  .gaming-button {
-    @apply relative overflow-hidden bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white font-orbitron font-bold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105;
-  }
-  
-  .gaming-button::before {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-700;
-  }
-  
-  .gaming-button:hover::before {
-    @apply translate-x-full;
-  }
-  
   .floating-orb {
     @apply absolute rounded-full blur-3xl animate-float;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
   }
 }
 

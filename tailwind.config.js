@@ -57,7 +57,7 @@ export default {
           950: '#083344',
         },
         twitter: '#000000',
-        kick: '#00ff41',
+        kick: '#53fc18',
       },
       fontFamily: {
         orbitron: ['Orbitron', 'monospace'],
