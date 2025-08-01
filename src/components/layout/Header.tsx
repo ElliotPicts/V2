@@ -66,19 +66,19 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
           {/* Social Links */}
           <div className="hidden md:flex items-center space-x-2">
             <Button
-              variant="outline"
+             variant="ghost"
               size="sm"
               onClick={() => window.open('https://www.youtube.com/@G0TZEMAXWIN', '_blank')}
-              className="border-red-500/50 text-red-400 hover:bg-red-500 hover:text-white"
+             className="text-red-400 hover:text-red-300 hover:bg-red-500/10"
             >
               <span className="text-lg">📺</span>
               <span>YouTube</span>
             </Button>
             <Button
-              variant="outline"
+             variant="ghost"
               size="sm"
               onClick={() => window.open('https://discord.gg/SFkyxGxKvG', '_blank')}
-              className="border-indigo-500/50 text-indigo-400 hover:bg-indigo-500 hover:text-white"
+             className="text-indigo-400 hover:text-indigo-300 hover:bg-indigo-500/10"
             >
               <span className="text-lg">💬</span>
               <span>Discord</span>
@@ -144,18 +144,18 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
               ))}
               <div className="grid grid-cols-2 gap-2 pt-4 border-t border-white/10">
                 <Button
-                  variant="outline"
+                 variant="ghost"
                   size="sm"
                   onClick={() => window.open('https://www.youtube.com/@G0TZEMAXWIN', '_blank')}
-                  className="border-red-500/50 text-red-400 hover:bg-red-500 hover:text-white"
+                 className="text-red-400 hover:text-red-300 hover:bg-red-500/10"
                 >
                   📺 YouTube
                 </Button>
                 <Button
-                  variant="outline"
+                 variant="ghost"
                   size="sm"
                   onClick={() => window.open('https://discord.gg/SFkyxGxKvG', '_blank')}
-                  className="border-indigo-500/50 text-indigo-400 hover:bg-indigo-500 hover:text-white"
+                 className="text-indigo-400 hover:text-indigo-300 hover:bg-indigo-500/10"
                 >
                   💬 Discord
                 </Button>
