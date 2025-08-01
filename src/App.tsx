@@ -99,11 +99,29 @@ function App() {
               Premium Web3 casino affiliate program distributing <span className="gradient-text font-semibold">$3,000 monthly</span> to elite players.
             </motion.p>
             <motion.div 
-              className="flex justify-center space-x-8 mb-8"
+              className="flex justify-center space-x-6 mb-8 flex-wrap gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
+              <a
+                href="https://www.youtube.com/@G0TZEMAXWIN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-gray-400 hover:text-red-400 transition-colors duration-200 text-lg font-inter font-medium"
+              >
+                <span className="text-2xl">📺</span>
+                <span>@G0TZEMAXWIN</span>
+              </a>
+              <a
+                href="https://discord.gg/SFkyxGxKvG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-gray-400 hover:text-indigo-400 transition-colors duration-200 text-lg font-inter font-medium"
+              >
+                <span className="text-2xl">💬</span>
+                <span>Discord</span>
+              </a>
               <a
                 href="https://x.com/G0TZEWEB3"
                 target="_blank"

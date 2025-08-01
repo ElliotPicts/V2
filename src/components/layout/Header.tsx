@@ -66,6 +66,24 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
           {/* Social Links */}
           <div className="hidden md:flex items-center space-x-2">
             <Button
+              variant="outline"
+              size="sm"
+              onClick={() => window.open('https://www.youtube.com/@G0TZEMAXWIN', '_blank')}
+              className="border-red-500/50 text-red-400 hover:bg-red-500 hover:text-white"
+            >
+              <span className="text-lg">📺</span>
+              <span>YouTube</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => window.open('https://discord.gg/SFkyxGxKvG', '_blank')}
+              className="border-indigo-500/50 text-indigo-400 hover:bg-indigo-500 hover:text-white"
+            >
+              <span className="text-lg">💬</span>
+              <span>Discord</span>
+            </Button>
+            <Button
               variant="twitter"
               size="sm"
               onClick={() => window.open('https://x.com/G0TZEWEB3', '_blank')}
@@ -124,7 +142,23 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
                   <span>{section.label}</span>
                 </button>
               ))}
-              <div className="flex space-x-2 pt-4 border-t border-white/10">
+              <div className="grid grid-cols-2 gap-2 pt-4 border-t border-white/10">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => window.open('https://www.youtube.com/@G0TZEMAXWIN', '_blank')}
+                  className="border-red-500/50 text-red-400 hover:bg-red-500 hover:text-white"
+                >
+                  📺 YouTube
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => window.open('https://discord.gg/SFkyxGxKvG', '_blank')}
+                  className="border-indigo-500/50 text-indigo-400 hover:bg-indigo-500 hover:text-white"
+                >
+                  💬 Discord
+                </Button>
                 <Button
                   variant="twitter"
                   size="sm"
