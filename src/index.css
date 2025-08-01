@@ -12,12 +12,41 @@
   body {
     @apply bg-dark-950 text-white font-inter antialiased;
     background: 
-      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%),
-      #0f0f23;
+      radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(34, 211, 238, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+      linear-gradient(135deg, #0f0f23 0%, #16213e 50%, #1a1a2e 100%);
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: cyber-grid;
+    background-size: 50px 50px;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: energy-flow;
+    animation: data-flow 20s linear infinite;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 2;
   }
   
   html {
@@ -30,6 +59,10 @@
     @apply bg-white/5 backdrop-blur-xl border border-white/10;
   }
   
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-2xl border border-white/5;
+  }
+  
   .neon-border {
     @apply border border-primary-500/50;
     box-shadow: 
@@ -37,15 +70,59 @@
       inset 0 0 20px rgba(99, 102, 241, 0.1);
   }
   
+  .cyber-border {
+    @apply border border-primary-400/60;
+    box-shadow: 
+      0 0 30px rgba(99, 102, 241, 0.4),
+      inset 0 0 30px rgba(99, 102, 241, 0.1),
+      0 0 60px rgba(34, 211, 238, 0.2);
+  }
+  
   .premium-card {
-    @apply glass-effect rounded-2xl p-6 shadow-premium hover:shadow-neon transition-all duration-500;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    @apply glass-dark rounded-2xl p-6 shadow-premium hover:shadow-hologram transition-all duration-700 relative overflow-hidden;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
+  }
+  
+  .premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: hologram-gradient;
+    animation: hologram 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  
+  .cyber-card {
+    @apply glass-dark rounded-2xl p-6 cyber-border relative overflow-hidden;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(34, 211, 238, 0.05) 50%, rgba(251, 191, 36, 0.02) 100%);
+  }
+  
+  .cyber-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: cyber-grid;
+    background-size: 20px 20px;
+    opacity: 0.1;
+    pointer-events: none;
   }
   
   .gradient-text {
     @apply bg-gradient-to-r from-secondary-400 via-primary-400 to-accent-400 bg-clip-text text-transparent;
     background-size: 200% 200%;
-    animation: gradient-shift 3s ease-in-out infinite;
+    animation: gradient-x 3s ease-in-out infinite;
+  }
+  
+  .gradient-text-rainbow {
+    @apply bg-gradient-to-r from-neon-pink via-neon-purple via-neon-blue via-neon-cyan via-neon-green to-neon-yellow bg-clip-text text-transparent;
+    background-size: 400% 400%;
+    animation: gradient-x 4s ease-in-out infinite;
   }
   
   .neon-text {
@@ -57,39 +134,133 @@
       0 0 20px currentColor;
   }
   
+  .neon-text-intense {
+    @apply animate-neon-flicker;
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor,
+      0 0 40px currentColor,
+      0 0 50px currentColor;
+  }
+  
   .cyber-button {
-    @apply relative overflow-hidden bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white font-orbitron font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105;
+    @apply relative overflow-hidden bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 hover:from-primary-500 hover:via-primary-400 hover:to-primary-300 text-white font-orbitron font-bold px-8 py-4 rounded-xl transition-all duration-500 transform hover:scale-105 active:scale-95;
     box-shadow: 
-      0 0 20px rgba(99, 102, 241, 0.4),
-      inset 0 0 20px rgba(255, 255, 255, 0.1);
+      0 0 30px rgba(99, 102, 241, 0.5),
+      inset 0 0 30px rgba(255, 255, 255, 0.1),
+      0 0 60px rgba(99, 102, 241, 0.3);
   }
   
   .cyber-button::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-700;
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-1000;
   }
   
   .cyber-button:hover::before {
     @apply translate-x-full;
   }
   
+  .cyber-button::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-primary-400/20 via-accent-400/20 to-secondary-400/20 animate-gradient-x blur-xl;
+  }
+  
+  .neon-button {
+    @apply relative overflow-hidden font-orbitron font-black px-8 py-4 rounded-xl transition-all duration-500 transform hover:scale-110 active:scale-95;
+    background: linear-gradient(45deg, #ff0080, #ff8000, #ffff00, #80ff00, #00ff80, #00ffff, #0080ff, #8000ff);
+    background-size: 400% 400%;
+    animation: gradient-x 3s ease infinite;
+    box-shadow: 
+      0 0 40px rgba(255, 0, 128, 0.6),
+      0 0 80px rgba(0, 255, 255, 0.4),
+      0 0 120px rgba(255, 255, 0, 0.2);
+  }
+  
+  .neon-button::before {
+    content: '';
+    @apply absolute inset-[2px] bg-dark-900 rounded-lg;
+  }
+  
+  .neon-button span {
+    @apply relative z-10 gradient-text-rainbow neon-text-intense;
+  }
+  
   .floating-orb {
-    @apply absolute rounded-full blur-3xl animate-float;
+    @apply absolute rounded-full blur-3xl animate-float-slow;
     background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
   }
   
+  .floating-orb-accent {
+    @apply absolute rounded-full blur-3xl animate-float;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.3) 0%, transparent 70%);
+  }
+  
+  .floating-orb-secondary {
+    @apply absolute rounded-full blur-3xl animate-float-slow;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, transparent 70%);
+  }
+  
   .data-stream {
-    @apply absolute inset-0 opacity-10;
+    @apply absolute inset-0 opacity-5;
     background-image: 
-      linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.1) 50%, transparent 100%),
+      linear-gradient(90deg, transparent 0%, rgba(99, 102, 241, 0.2) 50%, transparent 100%),
       repeating-linear-gradient(
         0deg,
         transparent,
         transparent 2px,
-        rgba(99, 102, 241, 0.03) 2px,
-        rgba(99, 102, 241, 0.03) 4px
+        rgba(99, 102, 241, 0.05) 2px,
+        rgba(99, 102, 241, 0.05) 4px
       );
     animation: gradient-shift 8s linear infinite;
+  }
+  
+  .matrix-bg {
+    @apply absolute inset-0 overflow-hidden pointer-events-none opacity-10;
+  }
+  
+  .hologram-effect {
+    @apply relative;
+  }
+  
+  .hologram-effect::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-primary-400/20 to-transparent;
+    animation: hologram 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+  
+  .energy-border {
+    @apply relative;
+  }
+  
+  .energy-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl;
+    background: linear-gradient(45deg, #ff0080, #ff8000, #ffff00, #80ff00, #00ff80, #00ffff, #0080ff, #8000ff);
+    background-size: 400% 400%;
+    animation: gradient-x 3s ease infinite;
+    padding: 2px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+  
+  .twitter-glow {
+    @apply hover:shadow-neon-lg;
+    color: #1da1f2;
+  }
+  
+  .twitter-glow:hover {
+    box-shadow: 0 0 30px rgba(29, 161, 242, 0.6), 0 0 60px rgba(29, 161, 242, 0.4);
+  }
+  
+  .kick-glow {
+    @apply hover:shadow-neon-lg;
+    color: #53fc18;
+  }
+  
+  .kick-glow:hover {
+    box-shadow: 0 0 30px rgba(83, 252, 24, 0.6), 0 0 60px rgba(83, 252, 24, 0.4);
   }
 }
 
@@ -102,6 +273,13 @@
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
   }
   
+  .text-shadow-neon {
+    text-shadow: 
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+  
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -109,6 +287,18 @@
   
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
   }
 }
 
@@ -122,11 +312,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-600 rounded-full;
+  @apply bg-gradient-to-b from-primary-600 to-primary-400 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-500;
+  @apply bg-gradient-to-b from-primary-500 to-primary-300;
 }
 
 /* Selection */
@@ -134,12 +324,53 @@
   @apply bg-primary-500/30 text-white;
 }
 
-/* Loading animations */
-@keyframes matrix-rain {
-  0% { transform: translateY(-100vh); opacity: 1; }
-  100% { transform: translateY(100vh); opacity: 0; }
+/* Particle system */
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(45deg, #ff0080, #0080ff);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
 }
 
+.particle:nth-child(odd) {
+  animation-delay: -2s;
+  background: linear-gradient(45deg, #00ff80, #ffff00);
+}
+
+.particle:nth-child(3n) {
+  animation-delay: -4s;
+  background: linear-gradient(45deg, #8000ff, #ff8000);
+}
+
+/* Matrix rain effect */
 .matrix-rain {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent, #00ff80, transparent);
   animation: matrix-rain 3s linear infinite;
+}
+
+/* Cyber glitch effect */
+.cyber-glitch {
+  animation: cyber-glitch 2s ease-in-out infinite;
+}
+
+/* Energy pulse effect */
+.energy-pulse {
+  animation: energy-pulse 2s ease-in-out infinite;
+}
+
+/* Hologram scan lines */
+.hologram-lines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(99, 102, 241, 0.1) 2px,
+    rgba(99, 102, 241, 0.1) 4px
+  );
+  animation: gradient-shift 2s linear infinite;
 }
