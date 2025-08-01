@@ -51,14 +51,14 @@ export const mockPlayers: Player[] = [
   },
   {
     id: '2',
-    username: 'HEADLYNS',
-    totalWagered: 98750,
-    monthlyWagered: 98750,
+    username: 'RONPULL',
+    totalWagered: 43210,
+    monthlyWagered: 43210,
     rank: 2,
-    favoriteplatform: 'Solpump',
+    favoriteplatform: 'Rugs.fun',
     lastActive: new Date(Date.now() - 1000 * 60 * 30),
     isActive: true,
-    avatar: '🔥'
+    avatar: '🎯'
   },
   {
     id: '3',
@@ -84,14 +84,14 @@ export const mockPlayers: Player[] = [
   },
   {
     id: '5',
-    username: 'RONPULL',
-    totalWagered: 43210,
-    monthlyWagered: 43210,
+    username: 'HEADLYNS',
+    totalWagered: 98750,
+    monthlyWagered: 98750,
     rank: 5,
-    favoriteplatform: 'Rugs.fun',
+    favoriteplatform: 'Solpump',
     lastActive: new Date(Date.now() - 1000 * 60 * 15),
     isActive: true,
-    avatar: '🎯'
+    avatar: '🔥'
   }
 ];
 
