@@ -40,58 +40,58 @@ export const platforms: Platform[] = [
 export const mockPlayers: Player[] = [
   {
     id: '1',
-    username: 'CryptoWhale92',
-    totalWagered: 85420,
-    monthlyWagered: 85420,
+    username: 'G0TZEPLAY',
+    totalWagered: 125420,
+    monthlyWagered: 125420,
     rank: 1,
     favoriteplatform: 'Rugs.fun',
     lastActive: new Date(),
     isActive: true,
-    avatar: '🐋'
+    avatar: '👑'
   },
   {
     id: '2',
-    username: 'DiamondHands',
-    totalWagered: 67890,
-    monthlyWagered: 67890,
+    username: 'HEADLYNS',
+    totalWagered: 98750,
+    monthlyWagered: 98750,
     rank: 2,
     favoriteplatform: 'Solpump',
     lastActive: new Date(Date.now() - 1000 * 60 * 30),
     isActive: true,
-    avatar: '💎'
+    avatar: '🔥'
   },
   {
     id: '3',
-    username: 'MoonShot',
-    totalWagered: 54320,
-    monthlyWagered: 54320,
+    username: '0XFAKE',
+    totalWagered: 76890,
+    monthlyWagered: 76890,
     rank: 3,
     favoriteplatform: 'BCGame',
     lastActive: new Date(Date.now() - 1000 * 60 * 60 * 2),
     isActive: true,
-    avatar: '🚀'
+    avatar: '💎'
   },
   {
     id: '4',
-    username: 'RugPull_Master',
-    totalWagered: 43210,
-    monthlyWagered: 43210,
+    username: 'HONCD',
+    totalWagered: 54320,
+    monthlyWagered: 54320,
     rank: 4,
-    favoriteplatform: 'Rugs.fun',
+    favoriteplatform: 'Rain.gg',
     lastActive: new Date(Date.now() - 1000 * 60 * 60),
     isActive: true,
-    avatar: '🎭'
+    avatar: '⚡'
   },
   {
     id: '5',
-    username: 'SolanaKing',
-    totalWagered: 38900,
-    monthlyWagered: 38900,
+    username: 'RONPULL',
+    totalWagered: 43210,
+    monthlyWagered: 43210,
     rank: 5,
-    favoriteplatform: 'Solpump',
+    favoriteplatform: 'Rugs.fun',
     lastActive: new Date(Date.now() - 1000 * 60 * 15),
     isActive: true,
-    avatar: '👑'
+    avatar: '🎯'
   }
 ];
 
