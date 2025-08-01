@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark theme ultra premium
+        // Ultra dark theme
         dark: {
           50: '#f8fafc',
           100: '#f1f5f9',
@@ -14,9 +14,9 @@ export default {
           500: '#64748b',
           600: '#475569',
           700: '#334155',
-          800: '#1a1a2e',
-          900: '#16213e',
-          950: '#0f0f23',
+          800: '#0a0a0f',
+          900: '#050507',
+          950: '#000000',
         },
         // Electric purple primary
         primary: {
@@ -32,7 +32,7 @@ export default {
           900: '#312e81',
           950: '#1e1b4b',
         },
-        // Gold secondary
+        // Gold/Yellow secondary
         secondary: {
           50: '#fffbeb',
           100: '#fef3c7',
@@ -60,16 +60,17 @@ export default {
           900: '#164e63',
           950: '#083344',
         },
-        // Social colors
+        // X/Twitter - Noir
         twitter: {
-          400: '#1da1f2',
-          500: '#1a91da',
-          600: '#0d8bd9',
+          400: '#000000',
+          500: '#1a1a1a',
+          600: '#333333',
         },
+        // Kick - Vert
         kick: {
-          400: '#53fc18',
-          500: '#4ae815',
-          600: '#3dd60f',
+          400: '#00ff41',
+          500: '#00e63b',
+          600: '#00cc35',
         },
         // Neon colors
         neon: {
@@ -79,6 +80,8 @@ export default {
           purple: '#8000ff',
           yellow: '#ffff00',
           cyan: '#00ffff',
+          red: '#ff0040',
+          orange: '#ff8000',
         }
       },
       fontFamily: {
@@ -108,6 +111,11 @@ export default {
         'data-flow': 'data-flow 20s linear infinite',
         'energy-pulse': 'energy-pulse 2s ease-in-out infinite',
         'neon-flicker': 'neon-flicker 0.15s ease-in-out infinite alternate',
+        'rainbow': 'rainbow 3s linear infinite',
+        'laser': 'laser 2s ease-in-out infinite',
+        'electric': 'electric 1s ease-in-out infinite',
+        'quantum': 'quantum 4s ease-in-out infinite',
+        'plasma': 'plasma 3s ease-in-out infinite',
       },
       keyframes: {
         glow: {
@@ -245,6 +253,66 @@ export default {
         'neon-flicker': {
           '0%, 100%': { opacity: 1 },
           '50%': { opacity: 0.8 }
+        },
+        'rainbow': {
+          '0%': { filter: 'hue-rotate(0deg)' },
+          '100%': { filter: 'hue-rotate(360deg)' }
+        },
+        'laser': {
+          '0%, 100%': { 
+            boxShadow: '0 0 10px currentColor, 0 0 20px currentColor',
+            transform: 'scaleX(1)'
+          },
+          '50%': { 
+            boxShadow: '0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor',
+            transform: 'scaleX(1.1)'
+          }
+        },
+        'electric': {
+          '0%, 100%': { 
+            textShadow: '0 0 5px currentColor',
+            transform: 'scale(1)'
+          },
+          '50%': { 
+            textShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor',
+            transform: 'scale(1.02)'
+          }
+        },
+        'quantum': {
+          '0%, 100%': { 
+            opacity: 1,
+            transform: 'translateZ(0) rotateY(0deg)'
+          },
+          '25%': { 
+            opacity: 0.7,
+            transform: 'translateZ(10px) rotateY(90deg)'
+          },
+          '50%': { 
+            opacity: 0.5,
+            transform: 'translateZ(20px) rotateY(180deg)'
+          },
+          '75%': { 
+            opacity: 0.7,
+            transform: 'translateZ(10px) rotateY(270deg)'
+          }
+        },
+        'plasma': {
+          '0%, 100%': { 
+            background: 'linear-gradient(45deg, #ff0080, #0080ff)',
+            transform: 'rotate(0deg)'
+          },
+          '25%': { 
+            background: 'linear-gradient(45deg, #0080ff, #00ff80)',
+            transform: 'rotate(90deg)'
+          },
+          '50%': { 
+            background: 'linear-gradient(45deg, #00ff80, #ffff00)',
+            transform: 'rotate(180deg)'
+          },
+          '75%': { 
+            background: 'linear-gradient(45deg, #ffff00, #ff0080)',
+            transform: 'rotate(270deg)'
+          }
         }
       },
       backgroundImage: {
@@ -254,6 +322,7 @@ export default {
         'cyber-grid': 'linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px)',
         'hologram-gradient': 'linear-gradient(45deg, transparent 30%, rgba(99, 102, 241, 0.1) 50%, transparent 70%)',
         'energy-flow': 'linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.4), transparent)',
+        'plasma-gradient': 'linear-gradient(45deg, #ff0080, #ff8000, #ffff00, #80ff00, #00ff80, #00ffff, #0080ff, #8000ff)',
       },
       backdropBlur: {
         xs: '2px',
@@ -266,6 +335,7 @@ export default {
         'premium': '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05)',
         'cyber': '0 0 20px rgba(99, 102, 241, 0.5), inset 0 0 20px rgba(99, 102, 241, 0.1), 0 0 40px rgba(99, 102, 241, 0.3)',
         'hologram': '0 0 30px rgba(99, 102, 241, 0.6), 0 0 60px rgba(34, 211, 238, 0.4), 0 0 90px rgba(251, 191, 36, 0.2)',
+        'plasma': '0 0 40px rgba(255, 0, 128, 0.6), 0 0 80px rgba(0, 255, 255, 0.4), 0 0 120px rgba(255, 255, 0, 0.2)',
       }
     },
   },

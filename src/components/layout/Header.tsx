@@ -23,88 +23,102 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
     <motion.header 
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 1, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-24">
+          {/* Logo Ultra Premium */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex items-center space-x-4 group cursor-pointer"
+            transition={{ delay: 0.3 }}
+            className="flex items-center space-x-6 group cursor-pointer"
             onClick={() => onSectionChange('hub')}
           >
-            <div className="text-4xl animate-float group-hover:animate-cyber-glitch">⚡</div>
-            <div className="font-orbitron font-black text-2xl gradient-text neon-text group-hover:neon-text-intense transition-all duration-300">
+            <div className="text-5xl animate-cyber-glitch group-hover:animate-quantum">⚡</div>
+            <div className="font-orbitron font-black text-3xl gradient-text-plasma neon-text-ultra group-hover:animate-electric transition-all duration-500">
               G0TZE AFFILIATES
             </div>
           </motion.div>
           
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          {/* Desktop Navigation Ultra Premium */}
+          <nav className="hidden md:flex items-center space-x-2">
             {sections.map((section, index) => (
               <motion.button
                 key={section.id}
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                whileHover={{ scale: 1.05, rotateX: 5 }}
+                transition={{ delay: 0.4 + index * 0.1 }}
+                whileHover={{ 
+                  scale: 1.1, 
+                  rotateX: 8,
+                  rotateY: 4
+                }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => onSectionChange(section.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-orbitron font-bold transition-all duration-500 relative overflow-hidden group ${
+                className={`flex items-center space-x-3 px-8 py-4 rounded-2xl font-orbitron font-bold transition-all duration-700 relative overflow-hidden group ${
                   currentSection === section.id
-                    ? 'bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 text-white shadow-neon-lg'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5 backdrop-blur-sm border border-transparent hover:border-primary-500/30'
+                    ? 'bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 text-white shadow-neon-xl border border-primary-400/60'
+                    : 'text-gray-300 hover:text-white hover:bg-white/10 backdrop-blur-sm border border-transparent hover:border-primary-500/50 hover:shadow-neon-lg'
                 }`}
               >
-                {/* Hologram effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-700 group-hover:translate-x-full" />
+                {/* Ultra Premium Hologram effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-1000 group-hover:translate-x-full" />
                 
-                <span className="text-xl group-hover:animate-float relative z-10">{section.icon}</span>
-                <span className="relative z-10">{section.label}</span>
+                <span className="text-2xl group-hover:animate-float relative z-10">{section.icon}</span>
+                <span className="relative z-10 text-lg">{section.label}</span>
                 
-                {/* Active indicator */}
+                {/* Active indicator ultra premium */}
                 {currentSection === section.id && (
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-secondary-400 rounded-full animate-glow-pulse" />
+                  <>
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-secondary-400 rounded-full animate-glow-pulse" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 via-accent-500/20 to-secondary-500/20 animate-gradient-x blur-xl" />
+                  </>
                 )}
+                
+                {/* Cyber particles */}
+                <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-primary-400 rounded-full animate-float opacity-60" />
+                <div className="absolute bottom-1/4 left-1/4 w-1 h-1 bg-accent-400 rounded-full animate-float opacity-60" style={{ animationDelay: '1s' }} />
               </motion.button>
             ))}
           </nav>
           
-          {/* Social Links */}
-          <div className="hidden md:flex items-center space-x-3">
+          {/* Social Links Ultra Premium */}
+          <div className="hidden md:flex items-center space-x-4">
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
-            >
-              <Button
-                size="sm"
-                variant="twitter"
-                onClick={() => window.open('https://x.com/G0TZEWEB3', '_blank')}
-                className="shadow-cyber hover:shadow-neon-lg"
-              >
-                <span className="text-lg">🐦</span>
-                <span>Twitter</span>
-              </Button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.9 }}
             >
               <Button
-                size="sm"
+                size="lg"
+                variant="twitter"
+                onClick={() => window.open('https://x.com/G0TZEWEB3', '_blank')}
+                className="shadow-cyber hover:shadow-neon-xl"
+                glow
+              >
+                <span className="text-2xl animate-float">🐦</span>
+                <span className="font-black">X / TWITTER</span>
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.0 }}
+            >
+              <Button
+                size="lg"
                 variant="kick"
                 onClick={() => window.open('https://kick.com/G0TZEWIN', '_blank')}
                 glow
                 cyber
-                className="shadow-cyber hover:shadow-neon-xl animate-glow-pulse"
+                intense
+                ultra
+                className="shadow-plasma hover:shadow-mega-glow animate-glow-pulse"
               >
-                <span className="text-lg animate-float">🎥</span>
-                <span className="neon-text">LIVE</span>
+                <span className="text-2xl animate-cyber-glitch">🎥</span>
+                <span className="neon-text-intense font-black">KICK LIVE</span>
               </Button>
             </motion.div>
           </div>
@@ -112,67 +126,69 @@ export function Header({ currentSection, onSectionChange }: HeaderProps) {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <motion.button
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.2, rotateZ: 10 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-300 hover:text-white p-3 rounded-xl hover:bg-white/10 transition-all duration-300 border border-transparent hover:border-primary-500/30"
+              className="text-gray-300 hover:text-white p-4 rounded-2xl hover:bg-white/10 transition-all duration-500 border border-transparent hover:border-primary-500/50 hover:shadow-neon-lg"
             >
               {mobileMenuOpen ? (
-                <XMarkIcon className="h-6 w-6" />
+                <XMarkIcon className="h-8 w-8" />
               ) : (
-                <Bars3Icon className="h-6 w-6" />
+                <Bars3Icon className="h-8 w-8" />
               )}
             </motion.button>
           </div>
         </div>
         
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Ultra Premium */}
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-white/10 py-4 glass-dark rounded-b-2xl"
+            initial={{ opacity: 0, height: 0, rotateX: -90 }}
+            animate={{ opacity: 1, height: 'auto', rotateX: 0 }}
+            exit={{ opacity: 0, height: 0, rotateX: -90 }}
+            className="md:hidden border-t border-white/20 py-6 glass-ultra rounded-b-3xl"
           >
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-3">
               {sections.map((section, index) => (
                 <motion.button
                   key={section.id}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => {
                     onSectionChange(section.id);
                     setMobileMenuOpen(false);
                   }}
-                  className={`flex items-center space-x-3 px-4 py-3 rounded-xl font-orbitron font-bold transition-all duration-500 relative overflow-hidden group ${
+                  className={`flex items-center space-x-4 px-6 py-4 rounded-2xl font-orbitron font-bold transition-all duration-700 relative overflow-hidden group ${
                     currentSection === section.id
-                      ? 'bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 text-white shadow-neon'
-                      : 'text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-primary-500/30'
+                      ? 'bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 text-white shadow-neon-lg'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-primary-500/50'
                   }`}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-700 group-hover:translate-x-full" />
-                  <span className="text-xl relative z-10">{section.icon}</span>
-                  <span className="relative z-10">{section.label}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-1000 group-hover:translate-x-full" />
+                  <span className="text-2xl relative z-10">{section.icon}</span>
+                  <span className="relative z-10 text-lg">{section.label}</span>
                 </motion.button>
               ))}
-              <div className="flex space-x-2 px-4 pt-4 border-t border-white/10">
+              <div className="flex space-x-3 px-6 pt-6 border-t border-white/20">
                 <Button
-                  size="sm"
+                  size="md"
                   variant="twitter"
                   onClick={() => window.open('https://x.com/G0TZEWEB3', '_blank')}
                   className="flex-1"
+                  glow
                 >
-                  🐦 Twitter
+                  🐦 X
                 </Button>
                 <Button
-                  size="sm"
+                  size="md"
                   variant="kick"
                   onClick={() => window.open('https://kick.com/G0TZEWIN', '_blank')}
                   glow
+                  intense
                   className="flex-1"
                 >
-                  🎥 LIVE
+                  🎥 KICK
                 </Button>
               </div>
             </div>
