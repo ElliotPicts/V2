@@ -62,31 +62,31 @@ export const mockPlayers: Player[] = [
   },
   {
     id: '3',
-    username: '0XFAKE',
+    username: 'ETXRNL',
     totalWagered: 76890,
     monthlyWagered: 76890,
     rank: 3,
     favoriteplatform: 'BCGame',
     lastActive: new Date(Date.now() - 1000 * 60 * 60 * 2),
     isActive: true,
-    avatar: '💎'
+    avatar: '🌟'
   },
   {
     id: '4',
-    username: 'HONCD',
+    username: 'GO0MA',
     totalWagered: 54320,
     monthlyWagered: 54320,
     rank: 4,
     favoriteplatform: 'Rain.gg',
     lastActive: new Date(Date.now() - 1000 * 60 * 60),
     isActive: true,
-    avatar: '⚡'
+    avatar: '🎮'
   },
   {
     id: '5',
-    username: 'HEADLYNS',
-    totalWagered: 98750,
-    monthlyWagered: 98750,
+    username: 'SOLFIREX',
+    totalWagered: 32150,
+    monthlyWagered: 32150,
     rank: 5,
     favoriteplatform: 'Solpump',
     lastActive: new Date(Date.now() - 1000 * 60 * 15),
